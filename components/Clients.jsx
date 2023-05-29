@@ -43,7 +43,7 @@ export const LogoutBtn = () => {
             toast.success(data.message)
 
         } catch (error) {
-            toast.error(error)
+            return toast.error(error)
         }
     }
 
@@ -61,7 +61,7 @@ export const TodoButton = ({ id, completed }) => {
 
     const deleteHandler = async (id) => {
         try {
-            const res = await fetch(`https://nextjs-6pack-todo.vercel.app/api/task/${id}`,{
+            const res = await fetch(`/api/task/${id}`,{
                 method: 'DELETE',
             })
             const data = await res.json()
@@ -75,7 +75,7 @@ export const TodoButton = ({ id, completed }) => {
     
     const updateHandler = async (id) => {
         try {
-            const res = await fetch(`https://nextjs-6pack-todo.vercel.app/api/task/${id}`,{
+            const res = await fetch(`/api/task/${id}`,{
                 method: 'PUT',
             })
             const data = await res.json()

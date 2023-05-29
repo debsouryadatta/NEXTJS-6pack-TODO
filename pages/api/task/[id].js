@@ -20,7 +20,7 @@ const handler = asyncError(async (req, res) => {
 
         await task.save()
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: "Task updated successfully"
         })
@@ -28,7 +28,7 @@ const handler = asyncError(async (req, res) => {
     } else if (req.method === "DELETE") {
 
         await task.deleteOne()
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: "Task deleted successfully"
         })
@@ -37,7 +37,7 @@ const handler = asyncError(async (req, res) => {
         errorHandler(res, 400, "This method is not available")
     }
 
-    res.json({
+    return res.json({
         success: true,
         tasks
     })
