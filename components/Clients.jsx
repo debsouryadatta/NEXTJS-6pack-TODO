@@ -61,7 +61,7 @@ export const TodoButton = ({ id, completed }) => {
 
     const deleteHandler = async (id) => {
         try {
-            const res = await fetch(`/api/task/${id}`,{
+            const res = await fetch(`${process.env.URL}/api/task/${id}`,{
                 method: 'DELETE',
             })
             const data = await res.json()
@@ -75,7 +75,7 @@ export const TodoButton = ({ id, completed }) => {
 
     const updateHandler = async (id) => {
         try {
-            const res = await fetch(`/api/task/${id}`,{
+            const res = await fetch(`${process.env.URL}/api/task/${id}`,{
                 method: 'PUT',
             })
             const data = await res.json()
