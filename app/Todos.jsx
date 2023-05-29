@@ -14,6 +14,7 @@ const fetchTodo = async (token) => {
         const data = await res.json()
 
         if (!data.success) return []
+        // console.log(data.tasks);
         return data.tasks
 
     } catch (error) {
