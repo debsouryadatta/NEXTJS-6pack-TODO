@@ -39,7 +39,7 @@ const handler = asyncError(async (req, res) => {
 
     return res.json({
         success: true,
-        tasks
+        task
     })
 })
 

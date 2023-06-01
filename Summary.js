@@ -1,7 +1,7 @@
 // * 1. create-next-app, then npm i sass mongoose
 // * 2. Modifying next.config.js file
 // * 3. Importing styles folder from the github repo
-// * 4. We have to use client component when using -> hooks, event listeners, api usuage, using local storage
+// * 4. We have to use client component when using -> hooks, forms, event listeners, api usuage, using local storage
 // * 5. Creating the Header ui and making the Login/Logout button as client component
 // * 6. Redux is not required for this mini project, so we are using usecontext
 // * 7. Creating a context provider in Clients.jsx and wrapping up the contents in the layout.js inside the ContextProvider
@@ -31,9 +31,9 @@
 // * 27. Saving all the routes on the thunderclient extension
 // * 28. Creating route function for mytasks 
 // * 29. Creating a middleware for Authentication and getting the user info from the JWT token
-// * 30. Creating route function for profile(me.js), fgetting the user info from the authentication middleware
+// * 30. Creating route function for profile(me.js), for getting the user info from the authentication middleware
 // * 31. Creating route function for update and delete using task.id(req.query)
-// * 32. Updating the new task route function, getting the user from the authentication midlleware and putting user._id into the payload
+// * 32. Updating the new task route function, getting the user from the authentication middleware and putting user._id into the payload
 
 
 // * 33. Backend Routes are ready now coming back to frontend
@@ -53,14 +53,17 @@
 // * 44. During fetching the tasks, we see that in the post request the cookie is not not sent as a header so the data didn't came, its a problem with the nextjs(we may get the solution soon), till then we have to put the cookie as a header manually
 // * 45. Adding useRouter hook to refresh the AddTodoForm
 // * 46. Relocating the Tasks section to a different file, name - Todos.jsx so that we can add a suspense
-// * 47. Adding a redirect in AddTodoForm, so that we user is null then it is redirected to the login page
+// * 47. Adding a redirect in AddTodoForm, so that if user is null then it is redirected to the login page
 // * 48. Creating deleteHandler for deleting the tasks, here we have also used toast and router
-// * 48. Creating updateHandler for updating the tasks, we almost copied the the deleteHandler for thois purpose
+// * 48. Creating updateHandler for updating the tasks, we almost copied the the deleteHandler for this purpose
 
 
 // * 49. Creating a profile page to show the user credentials
-// * 50. Creating login.jsx for the whole app
+// * 50. Creating loading.jsx for the whole app
 // * 51. The client components should start with Capital letter, and also we can't add metadeta in client components
 // * 52. Then doing npm run build to test the website in production
 // * 53. In build mode, we can't get the tasks since during fetching it gives an error that the process.env.URL doesn't matches the main URL, but there would not be any problem after deployment on vercel, so heading towards deployment.
 // * 53. Ultimately deploying the website on the vercel with GitHub
+
+
+// * 54. Then I was stuck for much time, fix - downgrade my next version to the version used in the tutorial and also solved this error(https://stackoverflow.com/questions/52122272/err-http-headers-sent-cannot-set-headers-after-they-are-sent-to-the-client/52122527#52122527) by the help of stack overflow, just did - return res.json in the backend part
